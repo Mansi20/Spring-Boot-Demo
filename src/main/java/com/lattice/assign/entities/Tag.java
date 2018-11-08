@@ -14,13 +14,13 @@ import javax.persistence.Table;
 public class Tag {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="tag_id")
     private int id;
 	@Column
     private String description;
 	@Column
-	private String isActive;
+	private Boolean isActive;
 	@Column
 	private Date createdOn;
 	public int getId() {
@@ -35,10 +35,10 @@ public class Tag {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getIsActive() {
+	public Boolean getIsActive() {
 		return isActive;
 	}
-	public void setIsActive(String isActive) {
+	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
 	}
 	public Date getCreatedOn() {

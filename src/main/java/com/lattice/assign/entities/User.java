@@ -1,5 +1,6 @@
 package com.lattice.assign.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ public class User {
 
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")
     private int id;
 	@Column
@@ -33,7 +34,7 @@ public class User {
 	//each user can have multiple devices
 	@OneToMany
 	@JoinColumn(name="device_id")
-	private Set<Device> device;
+	private List<Device> device;
 	//each user can have only one tag i.e Admin,Manager,Operator
 	@OneToOne
 	@JoinColumn(name="tag_id")
@@ -56,10 +57,10 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Set<Device> getDevice() {
+	public List<Device> getDevice() {
 		return device;
 	}
-	public void setDevice(Set<Device> device) {
+	public void setDevice(List<Device> device) {
 		this.device = device;
 	}
 	public Tag getTag() {

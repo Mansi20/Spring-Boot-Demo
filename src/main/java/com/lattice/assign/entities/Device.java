@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 	{
 	  
 		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="device_id")
 	    private int id;
 		@Column
@@ -54,6 +54,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 		public String getStatus() {
 			return status;
+		}
+
+		public String getOperatorId() {
+			return operatorId;
+		}
+
+		public void setOperatorId(String operatorId) {
+			this.operatorId = operatorId;
 		}
 
 		public void setStatus(String status) {

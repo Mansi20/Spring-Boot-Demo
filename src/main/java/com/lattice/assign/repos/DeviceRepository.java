@@ -6,4 +6,5 @@ import com.lattice.assign.entities.Device;
 
 public interface DeviceRepository extends JpaRepository<Device, Integer> {
 
+
 }

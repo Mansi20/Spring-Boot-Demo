@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Protocol {
   
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="protocol_id")
    private int id;
 	@Column
@@ -24,12 +24,16 @@ public class Protocol {
 	@Column(name="created_on")
    private Date createdOn;
 	
-	public Protocol(int id) {
-		super();
-		this.id = id;
-	}
+   @Column
 	private boolean used=false;
 	
+   public Protocol()
+   {
+	   
+   }
+	public Protocol(int protocolId) {
+		// TODO Auto-generated constructor stub
+	}
 	public boolean isUsed() {
 		return used;
 	}

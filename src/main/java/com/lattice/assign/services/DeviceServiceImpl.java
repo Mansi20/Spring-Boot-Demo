@@ -1,7 +1,5 @@
 package com.lattice.assign.services;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +41,10 @@ public class DeviceServiceImpl implements DeviceService {
 	}
 
 	
+
+	
 //it is checked that a protocol used by device cannot be used elsewhere 
-	@Override
+//	@Override
 	public void useProtocol(int protocolId) {
 		// TODO Auto-generated method stub
 	Protocol protocol=new Protocol(protocolId);
